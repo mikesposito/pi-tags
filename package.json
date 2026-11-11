@@ -1,0 +1,36 @@
+{
+  "name": "pi-tree",
+  "version": "0.1.0",
+  "description": "Tag points in a pi conversation: /tag, /tags, /tagfork, and a quick-tag key.",
+  "keywords": [
+    "pi-package",
+    "pi-tree"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "core.ts",
+    "index.ts",
+    "assets/demo.gif"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "author": "mikesposito",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesposito/pi-tree.git"
+  },
+  "homepage": "https://github.com/mikesposito/pi-tree#readme",
+  "bugs": {
+    "url": "https://github.com/mikesposito/pi-tree/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
