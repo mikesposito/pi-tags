@@ -13,6 +13,7 @@
  * - /untag: remove the tag from the last message.
  * - /tags: list every tag on the active branch.
  * - /tagfork: pick a user message to fork from, tags shown inline.
+ * - /checkout <tag>: jump to a tagged entry, no branch summary.
  * - alt+t: quick-tag the last message with a generated label.
  *
  * To tag an older point, navigate there with /tree first: tagging always
@@ -20,6 +21,7 @@
  */
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
 import {
+	findTaggedEntry,
 	forkRows,
 	lastMessageEntry,
 	nextDefaultLabel,
@@ -82,6 +84,25 @@ export default function (pi: ExtensionAPI) {
 			if (choice === undefined) return;
 			const index = options.indexOf(choice);
 			if (index >= 0) await ctx.fork(rows[index].id);
+		},
+	});
+
+	// /checkout is not a pi built-in, so the name is free for extensions.
+	pi.registerCommand("checkout", {
+		description: "Jump to a tagged entry, no branch summary (usage: /checkout <tag>)",
+		handler: async (args, ctx) => {
+			const tag = args.trim();
+			if (!tag) {
+				ctx.ui.notify("Usage: /checkout <tag> (see /tags)", "warning");
+				return;
+			}
+			const target = findTaggedEntry(branchOf(ctx), getLabel(ctx), tag);
+			if (!target) {
+				ctx.ui.notify(`No tag "${tag}" on the active branch`, "warning");
+				return;
+			}
+			const result = await ctx.navigateTree(target.id, { summarize: false });
+			if (!result.cancelled) ctx.ui.notify(`Checked out: ${tag}`, "info");
 		},
 	});
 

@@ -21,12 +21,15 @@ alt+t                  Same, without leaving the keyboard
 /untag                 Remove the tag from the last message
 /tags                  List every tag on the active branch
 /tagfork               The /fork picker, with tags shown inline
+/checkout <tag>        Jump to a tagged entry, no branch summary
 /tree                  Built-in: browse the session tree, every tag shown
                        on its entry (Shift+L edits, Ctrl+L filters to tagged)
 ```
 
 `/tag` always tags the newest message of the active branch. To tag an
-earlier point, navigate there with `/tree` first, then tag.
+earlier point, navigate there with `/tree` first, then tag. `/checkout`
+lands right after the tagged message (usually the reply it names) and,
+with duplicate tag names, jumps to the most recent one.
 
 ## /tagfork
 

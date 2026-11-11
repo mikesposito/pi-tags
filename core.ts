@@ -99,3 +99,19 @@ export function tagListLines(branch: readonly unknown[], getLabel: GetLabel): st
 		return `# ${tag} - ${preview(messageText(entry.message.content), 60)}`;
 	});
 }
+
+/**
+ * The newest message on the branch carrying exactly this tag. Duplicate
+ * tag names resolve to the most recent one.
+ */
+export function findTaggedEntry(
+	branch: readonly unknown[],
+	getLabel: GetLabel,
+	tag: string,
+): MessageEntry | undefined {
+	for (let i = branch.length - 1; i >= 0; i--) {
+		const entry = branch[i];
+		if (isMessageEntry(entry) && getLabel(entry.id) === tag) return entry;
+	}
+	return undefined;
+}

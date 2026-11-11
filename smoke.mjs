@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {
+	findTaggedEntry,
 	forkRows,
 	isMessageEntry,
 	lastMessageEntry,
@@ -131,5 +132,20 @@ delete labels["u2"];
 assert.deepEqual(tagListLines(branch, getLabel), ["# start - first prompt", "# checkpoint - hi there"]);
 assert.deepEqual(tagListLines(branch, getLabel).length, 2);
 assert.deepEqual(tagListLines([], getLabel), []);
+
+// /checkout tag lookup: newest match wins, others miss cleanly
+assert.equal(findTaggedEntry(branch, getLabel, "start")?.id, "u1");
+assert.equal(findTaggedEntry(branch, getLabel, "checkpoint")?.id, "a1");
+assert.equal(findTaggedEntry(branch, getLabel, "nope"), undefined);
+assert.equal(findTaggedEntry([], getLabel, "start"), undefined);
+// duplicate tag names resolve to the most recent
+labels["u2"] = "start";
+assert.equal(findTaggedEntry(branch, getLabel, "start")?.id, "u2");
+delete labels["u2"];
+// non-message entries carrying the label id are never returned
+assert.equal(
+	findTaggedEntry([{ type: "label", id: "l1", targetId: "u1", label: "start" }], getLabel, "start"),
+	undefined,
+);
 
 console.log("pi-tree core: all checks passed");
