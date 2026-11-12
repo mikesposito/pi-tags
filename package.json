@@ -1,6 +1,6 @@
 {
   "name": "pi-tree",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tag points in a pi conversation: /tag, /tags, /tagfork, and a quick-tag key.",
   "keywords": [
     "pi-package",
