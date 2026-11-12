@@ -1,9 +1,9 @@
 /**
- * Pure logic for pi-tree, kept free of pi imports so smoke.mjs can test it
+ * Pure logic for pi-tags, kept free of pi imports so smoke.mjs can test it
  * with plain node.
  */
 
-/** A session message entry, narrowed to the fields pi-tree needs. */
+/** A session message entry, narrowed to the fields pi-tags needs. */
 export type MessageEntry = {
 	type: "message";
 	id: string;

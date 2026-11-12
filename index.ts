@@ -1,5 +1,5 @@
 /**
- * pi-tree: tag points in a pi conversation.
+ * pi-tags: tag points in a pi conversation.
  *
  * Tags are pi entry labels: persisted in the session file as LabelEntry,
  * carried into forks, and shown natively in /tree (where Shift+L edits a

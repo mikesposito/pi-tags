@@ -1,4 +1,4 @@
-# pi-tree
+# pi-tags
 
 [![npm version](https://img.shields.io/npm/v/pi-tags)](https://www.npmjs.com/package/pi-tags)
 [![license](https://img.shields.io/npm/l/pi-tags)](LICENSE)
@@ -61,7 +61,7 @@ pi install npm:pi-tags
 Or from GitHub:
 
 ```sh
-pi install git:github.com/mikesposito/pi-tree
+pi install git:github.com/mikesposito/pi-tags
 ```
 
 Try it once without installing:
@@ -74,8 +74,8 @@ For local development, symlink the checkout into your extensions directory,
 or load it per run:
 
 ```sh
-ln -s /path/to/pi-tree ~/.pi/agent/extensions/pi-tree
-pi -e /path/to/pi-tree
+ln -s /path/to/pi-tags ~/.pi/agent/extensions/pi-tags
+pi -e /path/to/pi-tags
 ```
 
 No runtime dependencies, no configuration. The host-provided pi package is

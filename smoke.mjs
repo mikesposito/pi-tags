@@ -148,4 +148,4 @@ assert.equal(
 	undefined,
 );
 
-console.log("pi-tree core: all checks passed");
+console.log("pi-tags core: all checks passed");

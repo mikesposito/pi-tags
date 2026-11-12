@@ -1,7 +1,7 @@
 {
   "name": "pi-tags",
   "version": "0.1.0",
-  "description": "Tag points in a pi conversation: /tag, /tags, /tagfork, and a quick-tag key.",
+  "description": "Tag points in a pi conversation: /tag, /tags, /tagfork, /checkout, and a quick-tag key.",
   "keywords": [
     "pi-package",
     "pi-tags"
@@ -24,11 +24,11 @@
   "author": "mikesposito",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikesposito/pi-tree.git"
+    "url": "git+https://github.com/mikesposito/pi-tags.git"
   },
-  "homepage": "https://github.com/mikesposito/pi-tree#readme",
+  "homepage": "https://github.com/mikesposito/pi-tags#readme",
   "bugs": {
-    "url": "https://github.com/mikesposito/pi-tree/issues"
+    "url": "https://github.com/mikesposito/pi-tags/issues"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
