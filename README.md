@@ -1,7 +1,7 @@
 # pi-tree
 
-[![npm version](https://img.shields.io/npm/v/pi-tree)](https://www.npmjs.com/package/pi-tree)
-[![license](https://img.shields.io/npm/l/pi-tree)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/pi-tags)](https://www.npmjs.com/package/pi-tags)
+[![license](https://img.shields.io/npm/l/pi-tags)](LICENSE)
 
 Tag points in a pi conversation, then find them again.
 
@@ -55,7 +55,7 @@ it.
 From npm:
 
 ```sh
-pi install npm:pi-tree
+pi install npm:pi-tags
 ```
 
 Or from GitHub:
@@ -67,7 +67,7 @@ pi install git:github.com/mikesposito/pi-tree
 Try it once without installing:
 
 ```sh
-pi -e npm:pi-tree
+pi -e npm:pi-tags
 ```
 
 For local development, symlink the checkout into your extensions directory,
